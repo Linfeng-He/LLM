@@ -1,0 +1,40 @@
+{
+  "timestamp_utc": "2026-04-27T20:38:49.620401+00:00",
+  "state": "completed",
+  "driver_pid": 149613,
+  "driver_alive": false,
+  "summary": {
+    "results_seen": 3,
+    "expected_runs": 3,
+    "counts": {
+      "passed": 3
+    },
+    "issues": []
+  },
+  "driver_log_tail": [
+    "[2026-04-27T20:35:18.816353+00:00] real experiment driver started",
+    "[2026-04-27T20:35:18.816384+00:00] HF_HOME=/proj/lsm-PG0/LH/hf_cache",
+    "[2026-04-27T20:35:18.816421+00:00] model start medium Qwen/Qwen2.5-Coder-7B-Instruct",
+    "[2026-04-27T20:35:18.816504+00:00] starting server model=medium target=gpu_1 port=18201",
+    "[2026-04-27T20:36:03.865693+00:00] server ready model=medium target=gpu_1",
+    "[2026-04-27T20:36:03.865726+00:00] run start medium_gpu_1_chatbot",
+    "[2026-04-27T20:36:26.232859+00:00] run done medium_gpu_1_chatbot status=passed duration_s=18.5 issues=[]",
+    "[2026-04-27T20:36:26.233155+00:00] cooldown gpu_1_loaded_server 15s",
+    "[2026-04-27T20:36:41.248193+00:00] run start medium_gpu_1_code_generation",
+    "[2026-04-27T20:37:14.014144+00:00] run done medium_gpu_1_code_generation status=passed duration_s=28.8 issues=[]",
+    "[2026-04-27T20:37:14.014312+00:00] cooldown gpu_1_loaded_server 15s",
+    "[2026-04-27T20:37:29.029345+00:00] run start medium_gpu_1_long_conversation",
+    "[2026-04-27T20:38:04.957854+00:00] run done medium_gpu_1_long_conversation status=passed duration_s=31.3 issues=[]",
+    "[2026-04-27T20:38:04.958338+00:00] cooldown gpu_1_loaded_server 15s",
+    "[2026-04-27T20:38:19.973280+00:00] stopping server model=medium target=gpu_1",
+    "[2026-04-27T20:38:25.228095+00:00] cooldown gpu_1 15s",
+    "[2026-04-27T20:38:40.244080+00:00] model done medium",
+    "[2026-04-27T20:38:40.244655+00:00] real experiment driver finished"
+  ],
+  "final_summary": {
+    "timestamp_utc": "2026-04-27T20:38:40.244555+00:00",
+    "runs": 3,
+    "passed": 3,
+    "failed": 0
+  }
+}

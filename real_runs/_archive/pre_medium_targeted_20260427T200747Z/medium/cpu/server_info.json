@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-04-26T22:45:11.032702+00:00",
+  "model_size": "medium",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "target": "cpu",
+  "port": 18200,
+  "served_name": "medium-cpu",
+  "server_pid": 97254,
+  "server_log": "/users/LH/inference/real_runs/medium/cpu/server.log",
+  "server_command": [
+    "taskset",
+    "-c",
+    "0-127",
+    "/users/LH/inference/.venv-vllm-cpu-0102/bin/vllm",
+    "serve",
+    "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18200",
+    "--served-model-name",
+    "medium-cpu",
+    "--dtype",
+    "float32",
+    "--max-model-len",
+    "8192",
+    "--max-num-seqs",
+    "4",
+    "--disable-log-requests"
+  ],
+  "ready": false,
+  "ready_reason": "server_ready_timeout_after_7200s"
+}

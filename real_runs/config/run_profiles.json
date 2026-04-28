@@ -1,0 +1,34 @@
+{
+  "common": {
+    "MPLBACKEND": "Agg",
+    "PYTHONUNBUFFERED": "1",
+    "REAL_RUN_HF_HOME": "{root}/.hf_cache/huggingface",
+    "REAL_RUN_CPU_VLLM": "{root}/.venv-vllm-cpu-0102/bin/vllm",
+    "REAL_RUN_GPU_VLLM": "{root}/.venv-vllm-gpu-0102/bin/vllm",
+    "REAL_RUN_CONFIG_DIR": "{root}/real_runs/config",
+    "REAL_RUN_GPU_MODES": "gpu_1,gpu_2",
+    "REAL_RUN_CPU_CORE_COUNTS": "64",
+    "REAL_RUN_BENCH_TIMEOUT_S": "0",
+    "REAL_RUN_SMALL_BENCH_TIMEOUT_S": "0",
+    "REAL_RUN_SERVER_READY_TIMEOUT_S": "0",
+    "REAL_RUN_COOLDOWN_S": "15"
+  },
+  "profiles": {
+    "small_medium": {
+      "REAL_RUN_DIR": "{root}/real_runs/repro_small_medium",
+      "REAL_RUN_MODEL_SIZES": "small,medium",
+      "REAL_RUN_TARGETS": "cpu,gpu",
+      "REAL_RUN_EXPECTED_RUNS": "18",
+      "REAL_RUN_WORKLOADS_FILE": null,
+      "REAL_RUN_GPU_MEMORY_UTILIZATION": null
+    },
+    "medium_gpu_sustained": {
+      "REAL_RUN_DIR": "{root}/real_runs/repro_medium_gpu_sustained",
+      "REAL_RUN_MODEL_SIZES": "medium",
+      "REAL_RUN_TARGETS": "gpu",
+      "REAL_RUN_WORKLOADS_FILE": "{root}/real_runs/config/medium_gpu_workloads.json",
+      "REAL_RUN_GPU_MEMORY_UTILIZATION": "0.95",
+      "REAL_RUN_EXPECTED_RUNS": "6"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp_utc": "2026-04-27T20:50:21.942289+00:00",
+  "state": "running",
+  "driver_pid": 150934,
+  "driver_alive": true,
+  "summary": {
+    "results_seen": 0,
+    "expected_runs": 6,
+    "counts": {},
+    "issues": []
+  },
+  "driver_log_tail": [
+    "[2026-04-27T20:50:21.364083+00:00] real experiment driver started",
+    "[2026-04-27T20:50:21.364114+00:00] HF_HOME=/proj/lsm-PG0/LH/hf_cache",
+    "[2026-04-27T20:50:21.364192+00:00] model start medium Qwen/Qwen2.5-Coder-7B-Instruct",
+    "[2026-04-27T20:50:21.364280+00:00] starting server model=medium target=gpu_1 port=18201"
+  ]
+}

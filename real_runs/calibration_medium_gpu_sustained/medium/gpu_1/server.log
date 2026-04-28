@@ -1,0 +1,291 @@
+INFO 04-27 14:51:39 [__init__.py:216] Automatically detected platform cuda.
+WARNING 04-27 14:51:42 [__init__.py:1758] argument '--disable-log-requests' is deprecated and replaced with '--enable-log-requests'. This will be removed in v0.12.0.
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:51:42 [api_server.py:1896] vLLM API server version 0.10.2
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:51:42 [utils.py:328] non-default args: {'model_tag': 'Qwen/Qwen2.5-Coder-7B-Instruct', 'host': '127.0.0.1', 'port': 18201, 'model': 'Qwen/Qwen2.5-Coder-7B-Instruct', 'dtype': 'float16', 'max_model_len': 8192, 'served_model_name': ['medium-gpu_1'], 'disable_custom_all_reduce': True, 'gpu_memory_utilization': 0.8, 'max_num_seqs': 8}
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:51:51 [__init__.py:742] Resolved architecture: Qwen2ForCausalLM
+[1;36m(APIServer pid=151932)[0;0m WARNING 04-27 14:51:51 [__init__.py:2767] Casting torch.bfloat16 to torch.float16.
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:51:51 [__init__.py:1815] Using max model len 8192
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:51:52 [api_server.py:296] Started engine process with PID 152343
+INFO 04-27 14:51:56 [__init__.py:216] Automatically detected platform cuda.
+INFO 04-27 14:51:58 [llm_engine.py:221] Initializing a V0 LLM engine (v0.10.2) with config: model='Qwen/Qwen2.5-Coder-7B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-Coder-7B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, decoding_config=DecodingConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_backend=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=None, served_model_name=medium-gpu_1, enable_prefix_caching=None, chunked_prefill_enabled=False, use_async_output_proc=True, pooler_config=None, compilation_config={"level":0,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":null,"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":0,"use_cudagraph":true,"cudagraph_num_of_warmups":0,"cudagraph_capture_sizes":[8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"pass_config":{},"max_capture_size":8,"local_cache_dir":null}, use_cached_outputs=True, 
+INFO 04-27 14:52:00 [cuda.py:408] Cannot use FlashAttention-2 backend for Volta and Turing GPUs.
+INFO 04-27 14:52:00 [cuda.py:453] Using XFormers backend.
+[W427 14:52:01.496550137 ProcessGroupNCCL.cpp:981] Warning: TORCH_NCCL_AVOID_RECORD_STREAMS is the default now, this environment variable is thus deprecated. (function operator())
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+INFO 04-27 14:52:01 [parallel_state.py:1165] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+INFO 04-27 14:52:01 [model_runner.py:1051] Starting to load model Qwen/Qwen2.5-Coder-7B-Instruct...
+INFO 04-27 14:52:02 [weight_utils.py:348] Using model weights format ['*.safetensors']
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:00,  3.79it/s]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.14it/s]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:01,  1.11s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04<00:00,  1.26s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04<00:00,  1.11s/it]
+
+INFO 04-27 14:52:07 [default_loader.py:268] Loading weights took 4.73 seconds
+INFO 04-27 14:52:07 [model_runner.py:1083] Model loading took 14.2488 GiB and 5.630869 seconds
+INFO 04-27 14:52:09 [worker.py:290] Memory profiling takes 1.83 seconds
+INFO 04-27 14:52:09 [worker.py:290] the current vLLM instance can use total_gpu_memory (31.74GiB) x gpu_memory_utilization (0.80) = 25.39GiB
+INFO 04-27 14:52:09 [worker.py:290] model weights take 14.25GiB; non_torch_memory takes 0.09GiB; PyTorch activation peak memory takes 1.09GiB; the rest of the memory reserved for KV Cache is 9.96GiB.
+INFO 04-27 14:52:09 [executor_base.py:114] # cuda blocks: 11656, # CPU blocks: 4681
+INFO 04-27 14:52:09 [executor_base.py:119] Maximum concurrency for 8192 tokens per request: 22.77x
+INFO 04-27 14:52:16 [model_runner.py:1355] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+Capturing CUDA graph shapes:   0%|          | 0/4 [00:00<?, ?it/s]Capturing CUDA graph shapes:  25%|██▌       | 1/4 [00:00<00:01,  1.73it/s]Capturing CUDA graph shapes:  50%|█████     | 2/4 [00:01<00:01,  1.91it/s]Capturing CUDA graph shapes:  75%|███████▌  | 3/4 [00:01<00:00,  1.97it/s]Capturing CUDA graph shapes: 100%|██████████| 4/4 [00:02<00:00,  1.99it/s]Capturing CUDA graph shapes: 100%|██████████| 4/4 [00:02<00:00,  1.95it/s]
+INFO 04-27 14:52:18 [model_runner.py:1507] Graph capturing finished in 2 secs, took 0.12 GiB
+INFO 04-27 14:52:18 [worker.py:467] Free memory on device (31.44/31.74 GiB) on startup. Desired GPU memory utilization is (0.8, 25.39 GiB). Actual usage is 14.25 GiB for weight, 1.09 GiB for peak activation, 0.09 GiB for non-torch memory, and 0.12 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=10410108006` to fit into requested memory, or `--kv-cache-memory=16901029376` to fully utilize gpu memory. Current kv cache memory in use is 10695320678 bytes.
+INFO 04-27 14:52:18 [llm_engine.py:420] init engine (profile, create kv cache, warmup model) took 10.32 seconds
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:18 [api_server.py:1692] Supported_tasks: ['generate']
+[1;36m(APIServer pid=151932)[0;0m WARNING 04-27 14:52:18 [__init__.py:1695] Default sampling parameters have been overridden by the model's Hugging Face generation config recommended from the model creator. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:18 [serving_responses.py:130] Using default chat sampling params from model: {'repetition_penalty': 1.1, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [serving_chat.py:137] Using default chat sampling params from model: {'repetition_penalty': 1.1, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [serving_completion.py:76] Using default completion sampling params from model: {'repetition_penalty': 1.1, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [api_server.py:1971] Starting vLLM API server 0 on http://127.0.0.1:18201
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:36] Available routes are:
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /openapi.json, Methods: HEAD, GET
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /docs, Methods: HEAD, GET
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /redoc, Methods: HEAD, GET
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /health, Methods: GET
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /load, Methods: GET
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /ping, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /ping, Methods: GET
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /tokenize, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /detokenize, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/models, Methods: GET
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /version, Methods: GET
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/responses, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/responses/{response_id}, Methods: GET
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/chat/completions, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/completions, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/embeddings, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /pooling, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /classify, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /score, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/score, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/audio/transcriptions, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/audio/translations, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /rerank, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v1/rerank, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /v2/rerank, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /scale_elastic_ep, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /is_scaling_elastic_ep, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /invocations, Methods: POST
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 14:52:19 [launcher.py:44] Route: /metrics, Methods: GET
+[1;36m(APIServer pid=151932)[0;0m INFO:     Started server process [151932]
+[1;36m(APIServer pid=151932)[0;0m INFO:     Waiting for application startup.
+[1;36m(APIServer pid=151932)[0;0m INFO:     Application startup complete.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:50946 - "GET /v1/models HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49362 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:52:33 [metrics.py:398] Avg prompt throughput: 102.3 tokens/s, Avg generation throughput: 33.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.4%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:52:38 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 46.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.5%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:52:43 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 46.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:52:48 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 46.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49362 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36590 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36602 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36618 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36628 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36632 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36638 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36644 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:52:53 [metrics.py:398] Avg prompt throughput: 815.0 tokens/s, Avg generation throughput: 80.2 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:52:58 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 303.1 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.2%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:53:03 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 299.8 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.0%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:53:08 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 296.6 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.8%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:53:13 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 295.1 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:53:18 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 291.6 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 6.4%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49362 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36590 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36632 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36628 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36602 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36638 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36644 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36618 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:53:23 [metrics.py:398] Avg prompt throughput: 811.9 tokens/s, Avg generation throughput: 256.3 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.7%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:53:28 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 301.8 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.4%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:53:33 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 298.4 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.2%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:53:38 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 296.1 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.1%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:53:43 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 294.2 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.8%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49362 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36590 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36632 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36628 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36602 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36638 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36644 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36618 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:53:49 [metrics.py:398] Avg prompt throughput: 710.1 tokens/s, Avg generation throughput: 254.4 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.2%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:53:54 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 303.1 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.0%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:53:59 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 300.2 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.8%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:54:04 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 296.8 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:54:09 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 295.3 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.4%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:54:14 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 292.1 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 6.2%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49362 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36590 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36632 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36628 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36602 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36638 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36644 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:36618 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:54:19 [metrics.py:398] Avg prompt throughput: 816.5 tokens/s, Avg generation throughput: 253.6 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.5%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:54:24 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 302.2 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.4%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:54:29 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 299.3 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.1%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:54:34 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 296.2 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 4.9%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:54:39 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 294.7 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 5.7%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:54:44 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 290.7 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 6.5%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:54:55 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 19.3 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:55:05 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:57942 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:55:13 [metrics.py:398] Avg prompt throughput: 251.5 tokens/s, Avg generation throughput: 0.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.1%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:55:18 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 45.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.2%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:55:23 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 46.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.3%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:55:28 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 46.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.5%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:55:33 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 45.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.6%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:57942 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49698 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49706 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49708 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49720 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49726 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49732 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49736 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:55:38 [metrics.py:398] Avg prompt throughput: 3146.6 tokens/s, Avg generation throughput: 21.1 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 8.9%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:55:43 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 283.8 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 9.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:55:48 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 282.1 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 10.4%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:55:53 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 279.7 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 11.1%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:55:58 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 278.5 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 11.9%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:56:03 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 276.2 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 12.6%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:57942 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49732 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49698 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49706 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49708 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49726 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49736 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49720 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:56:09 [metrics.py:398] Avg prompt throughput: 1411.5 tokens/s, Avg generation throughput: 201.4 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 8.8%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:56:14 [metrics.py:398] Avg prompt throughput: 1635.4 tokens/s, Avg generation throughput: 203.6 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 9.3%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:56:19 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 282.9 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 10.1%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:56:24 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 280.4 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 10.9%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:56:29 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 278.8 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 11.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:56:34 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 277.4 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 12.3%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:56:39 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 274.5 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.1%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:57942 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49732 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49698 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49706 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49708 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49726 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49736 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49720 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:56:44 [metrics.py:398] Avg prompt throughput: 3254.8 tokens/s, Avg generation throughput: 114.7 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 9.0%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:56:49 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 284.1 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 9.8%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:56:54 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 281.6 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 10.5%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:56:59 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 279.4 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 11.3%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:57:04 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 278.2 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 12.1%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:57:09 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 275.4 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 12.7%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:57942 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49732 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49698 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49706 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49708 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49726 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49736 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:49720 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:57:15 [metrics.py:398] Avg prompt throughput: 2812.1 tokens/s, Avg generation throughput: 134.6 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 8.9%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:57:20 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 283.8 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 9.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:57:25 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 282.2 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 10.4%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:57:30 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 279.9 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 11.1%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:57:35 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 278.6 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 11.9%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:57:40 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 276.3 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 12.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:57:55 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 81.3 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:58:05 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:55144 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:58:14 [metrics.py:398] Avg prompt throughput: 678.1 tokens/s, Avg generation throughput: 0.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.3%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:58:19 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.4%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:58:24 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.5%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:58:29 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.7%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:58:34 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.8%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:55144 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43082 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43094 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43100 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:58:39 [metrics.py:398] Avg prompt throughput: 2164.6 tokens/s, Avg generation throughput: 24.1 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 1 reqs, GPU KV cache usage: 9.9%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:58:44 [metrics.py:398] Avg prompt throughput: 2446.9 tokens/s, Avg generation throughput: 69.7 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.4%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:58:49 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 139.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.8%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:58:54 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 139.4 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.1%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:59:00 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 138.9 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.5%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:59:05 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 138.6 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.9%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:59:10 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 138.4 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.2%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:55144 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43094 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43082 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43100 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:59:15 [metrics.py:398] Avg prompt throughput: 3188.3 tokens/s, Avg generation throughput: 45.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.2%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:59:20 [metrics.py:398] Avg prompt throughput: 1226.3 tokens/s, Avg generation throughput: 104.8 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.5%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:59:25 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 139.4 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.9%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:59:30 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 139.2 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.2%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:59:35 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 138.7 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:59:40 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 138.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.0%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:59:45 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 138.2 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.3%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:55144 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43094 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43082 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43100 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 14:59:51 [metrics.py:398] Avg prompt throughput: 4247.2 tokens/s, Avg generation throughput: 16.0 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.2%, CPU KV cache usage: 0.0%.
+INFO 04-27 14:59:56 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 139.1 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.5%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:00:01 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 139.4 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.9%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:00:06 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 139.2 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.3%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:00:11 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 138.8 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:00:16 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 138.6 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.0%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:55144 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43094 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43082 - "POST /v1/completions HTTP/1.1" 200 OK
+[1;36m(APIServer pid=151932)[0;0m INFO:     127.0.0.1:43100 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO 04-27 15:00:22 [metrics.py:398] Avg prompt throughput: 1072.6 tokens/s, Avg generation throughput: 105.6 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 2 reqs, GPU KV cache usage: 6.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:00:27 [metrics.py:398] Avg prompt throughput: 3655.8 tokens/s, Avg generation throughput: 34.8 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.2%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:00:32 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 139.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.6%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:00:37 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 139.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.0%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:00:42 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 139.0 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.4%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:00:47 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 138.8 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 14.7%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:00:52 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 138.5 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.1%, CPU KV cache usage: 0.0%.
+INFO 04-27 15:01:05 [metrics.py:398] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 32.8 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%.
+[1;36m(APIServer pid=151932)[0;0m WARNING 04-27 15:01:13 [launcher.py:98] port 18201 is used by process psutil.Process(pid=151932, name='vllm', status='running') launched with command:
+[1;36m(APIServer pid=151932)[0;0m WARNING 04-27 15:01:13 [launcher.py:98] /users/LH/inference/.venv-vllm-gpu-0102/bin/python /users/LH/inference/.venv-vllm-gpu-0102/bin/vllm serve Qwen/Qwen2.5-Coder-7B-Instruct --host 127.0.0.1 --port 18201 --served-model-name medium-gpu_1 --dtype float16 --max-model-len 8192 --max-num-seqs 8 --gpu-memory-utilization 0.80 --tensor-parallel-size 1 --disable-custom-all-reduce --disable-log-requests
+[1;36m(APIServer pid=151932)[0;0m INFO 04-27 15:01:13 [launcher.py:101] Shutting down FastAPI HTTP server.
+ERROR 04-27 15:01:13 [engine.py:468] MQLLMEngine terminated
+ERROR 04-27 15:01:13 [engine.py:468] Traceback (most recent call last):
+ERROR 04-27 15:01:13 [engine.py:468]   File "/users/LH/inference/.venv-vllm-gpu-0102/lib/python3.10/site-packages/vllm/engine/multiprocessing/engine.py", line 465, in run_mp_engine
+ERROR 04-27 15:01:13 [engine.py:468]     engine.start()
+ERROR 04-27 15:01:13 [engine.py:468]   File "/users/LH/inference/.venv-vllm-gpu-0102/lib/python3.10/site-packages/vllm/engine/multiprocessing/engine.py", line 181, in start
+ERROR 04-27 15:01:13 [engine.py:468]     self.cleanup()
+ERROR 04-27 15:01:13 [engine.py:468]   File "/users/LH/inference/.venv-vllm-gpu-0102/lib/python3.10/site-packages/vllm/engine/multiprocessing/engine.py", line 446, in signal_handler
+ERROR 04-27 15:01:13 [engine.py:468]     raise KeyboardInterrupt("MQLLMEngine terminated")
+ERROR 04-27 15:01:13 [engine.py:468] KeyboardInterrupt: MQLLMEngine terminated
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/users/LH/inference/.venv-vllm-gpu-0102/lib/python3.10/site-packages/vllm/engine/multiprocessing/engine.py", line 470, in run_mp_engine
+    raise e from None
+  File "/users/LH/inference/.venv-vllm-gpu-0102/lib/python3.10/site-packages/vllm/engine/multiprocessing/engine.py", line 465, in run_mp_engine
+    engine.start()
+  File "/users/LH/inference/.venv-vllm-gpu-0102/lib/python3.10/site-packages/vllm/engine/multiprocessing/engine.py", line 181, in start
+    self.cleanup()
+  File "/users/LH/inference/.venv-vllm-gpu-0102/lib/python3.10/site-packages/vllm/engine/multiprocessing/engine.py", line 446, in signal_handler
+    raise KeyboardInterrupt("MQLLMEngine terminated")
+KeyboardInterrupt: MQLLMEngine terminated
+[rank0]:[W427 15:01:14.711656193 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[1;36m(APIServer pid=151932)[0;0m INFO:     Shutting down
+[1;36m(APIServer pid=151932)[0;0m INFO:     Waiting for application shutdown.
+[1;36m(APIServer pid=151932)[0;0m INFO:     Application shutdown complete.

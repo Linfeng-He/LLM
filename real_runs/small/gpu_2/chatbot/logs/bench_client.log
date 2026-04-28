@@ -1,0 +1,33 @@
+INFO 04-26 16:43:17 [__init__.py:216] Automatically detected platform cuda.
+Namespace(subparser='bench', bench_type='serve', dispatch_function=<function BenchmarkServingSubcommand.cmd at 0x7ff89de575b0>, seed=0, num_prompts=8, dataset_name='random', no_stream=False, dataset_path=None, no_oversample=False, custom_output_len=256, custom_skip_chat_template=False, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, blazedit_min_distance=0.0, blazedit_max_distance=1.0, random_input_len=512, random_output_len=128, random_range_ratio=0.0, random_prefix_len=0, random_batch_size=1, random_mm_base_items_per_request=1, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 255, 'video': 0}, random_mm_bucket_config={(256, 256, 1): 0.5, (720, 1280, 1): 0.5, (720, 1280, 16): 0.0}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, endpoint_type='openai', label=None, backend='vllm', base_url=None, host='127.0.0.1', port=18202, endpoint='/v1/completions', max_concurrency=4, model='Qwen/Qwen2.5-Coder-1.5B-Instruct', tokenizer='Qwen/Qwen2.5-Coder-1.5B-Instruct', use_beam_search=False, logprobs=None, request_rate=inf, burstiness=1.0, trust_remote_code=False, disable_tqdm=False, profile=False, save_result=True, save_detailed=False, append_result=False, metadata=['max_model_len=8192'], result_dir='/users/LH/inference/real_runs/small/gpu_2/chatbot/results', result_filename='bench_serve.json', ignore_eos=True, percentile_metrics='ttft,tpot,itl', metric_percentiles='99', goodput=None, request_id_prefix='benchmark-serving', top_p=None, top_k=None, min_p=None, temperature=None, tokenizer_mode='auto', served_model_name='small-gpu_2', lora_modules=None, ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=600)
+INFO 04-26 16:43:21 [datasets.py:517] Sampling input_len from [512, 512] and output_len from [128, 128]
+Starting initial single prompt test run...
+Waiting for endpoint to become up in 600 seconds
+ |          | 00:00 elapsed, ? remaining |          | 00:00 elapsed, 00:05 remaining |          | 00:01 elapsed, 130:16:58 remaining
+Initial test run completed. Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 4
+  0%|          | 0/8 [00:00<?, ?it/s] 12%|█▎        | 1/8 [00:01<00:07,  1.12s/it] 62%|██████▎   | 5/8 [00:02<00:01,  2.46it/s]100%|██████████| 8/8 [00:02<00:00,  3.56it/s]
+============ Serving Benchmark Result ============
+Successful requests:                     8         
+Maximum request concurrency:             4         
+Benchmark duration (s):                  2.24      
+Total input tokens:                      4096      
+Total generated tokens:                  1024      
+Request throughput (req/s):              3.56      
+Output token throughput (tok/s):         456.29    
+Total Token throughput (tok/s):          2281.45   
+---------------Time to First Token----------------
+Mean TTFT (ms):                          103.32    
+Median TTFT (ms):                        103.31    
+P99 TTFT (ms):                           103.61    
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          8.02      
+Median TPOT (ms):                        8.02      
+P99 TPOT (ms):                           8.03      
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           8.02      
+Median ITL (ms):                         7.96      
+P99 ITL (ms):                            9.01      
+==================================================

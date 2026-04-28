@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-04-26T22:27:26.980323+00:00",
+  "model_size": "small",
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "target": "cpu",
+  "port": 18200,
+  "served_name": "small-cpu",
+  "server_pid": 94097,
+  "server_log": "/users/LH/inference/real_runs/small/cpu/server.log",
+  "server_command": [
+    "taskset",
+    "-c",
+    "0-127",
+    "/users/LH/inference/.venv-vllm-cpu-0102/bin/vllm",
+    "serve",
+    "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18200",
+    "--served-model-name",
+    "small-cpu",
+    "--dtype",
+    "float32",
+    "--max-model-len",
+    "8192",
+    "--max-num-seqs",
+    "4",
+    "--disable-log-requests"
+  ],
+  "ready": true,
+  "ready_reason": "ready"
+}

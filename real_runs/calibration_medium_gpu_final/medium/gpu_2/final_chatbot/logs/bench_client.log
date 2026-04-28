@@ -1,0 +1,33 @@
+INFO 04-27 15:11:43 [__init__.py:216] Automatically detected platform cuda.
+Namespace(subparser='bench', bench_type='serve', dispatch_function=<function BenchmarkServingSubcommand.cmd at 0x7f8a2c9bf6d0>, seed=0, num_prompts=48, dataset_name='random', no_stream=False, dataset_path=None, no_oversample=False, custom_output_len=256, custom_skip_chat_template=False, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, blazedit_min_distance=0.0, blazedit_max_distance=1.0, random_input_len=512, random_output_len=1024, random_range_ratio=0.0, random_prefix_len=0, random_batch_size=1, random_mm_base_items_per_request=1, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 255, 'video': 0}, random_mm_bucket_config={(256, 256, 1): 0.5, (720, 1280, 1): 0.5, (720, 1280, 16): 0.0}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, endpoint_type='openai', label=None, backend='vllm', base_url=None, host='127.0.0.1', port=18202, endpoint='/v1/completions', max_concurrency=8, model='Qwen/Qwen2.5-Coder-7B-Instruct', tokenizer='Qwen/Qwen2.5-Coder-7B-Instruct', use_beam_search=False, logprobs=None, request_rate=inf, burstiness=1.0, trust_remote_code=False, disable_tqdm=False, profile=False, save_result=True, save_detailed=False, append_result=False, metadata=['max_model_len=8192'], result_dir='/users/LH/inference/real_runs/calibration_medium_gpu_final/medium/gpu_2/final_chatbot/results', result_filename='bench_serve.json', ignore_eos=True, percentile_metrics='ttft,tpot,itl', metric_percentiles='99', goodput=None, request_id_prefix='benchmark-serving', top_p=None, top_k=None, min_p=None, temperature=None, tokenizer_mode='auto', served_model_name='medium-gpu_2', lora_modules=None, ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=600)
+INFO 04-27 15:11:47 [datasets.py:517] Sampling input_len from [512, 512] and output_len from [1024, 1024]
+Starting initial single prompt test run...
+Waiting for endpoint to become up in 600 seconds
+ |          | 00:00 elapsed, ? remaining |          | 00:00 elapsed, 00:05 remaining |          | 00:14 elapsed, 1994:13:21 remaining
+Initial test run completed. Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 8
+  0%|          | 0/48 [00:00<?, ?it/s]  2%|▏         | 1/48 [00:18<14:48, 18.91s/it] 19%|█▉        | 9/48 [00:37<02:24,  3.69s/it] 35%|███▌      | 17/48 [00:56<01:31,  2.95s/it] 52%|█████▏    | 25/48 [01:15<01:01,  2.69s/it] 69%|██████▉   | 33/48 [01:34<00:38,  2.56s/it] 85%|████████▌ | 41/48 [01:53<00:17,  2.49s/it]100%|██████████| 48/48 [01:53<00:00,  2.37s/it]
+============ Serving Benchmark Result ============
+Successful requests:                     48        
+Maximum request concurrency:             8         
+Benchmark duration (s):                  113.68    
+Total input tokens:                      24467     
+Total generated tokens:                  49152     
+Request throughput (req/s):              0.42      
+Output token throughput (tok/s):         432.36    
+Total Token throughput (tok/s):          647.58    
+---------------Time to First Token----------------
+Mean TTFT (ms):                          532.42    
+Median TTFT (ms):                        551.65    
+P99 TTFT (ms):                           562.31    
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          18.00     
+Median TPOT (ms):                        17.95     
+P99 TPOT (ms):                           18.23     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           18.00     
+Median ITL (ms):                         17.90     
+P99 ITL (ms):                            19.02     
+==================================================

@@ -1,0 +1,31 @@
+[2026-04-27T20:51:35.747437+00:00] real experiment driver started
+[2026-04-27T20:51:35.747467+00:00] HF_HOME=/proj/lsm-PG0/LH/hf_cache
+[2026-04-27T20:51:35.747543+00:00] model start medium Qwen/Qwen2.5-Coder-7B-Instruct
+[2026-04-27T20:51:35.747632+00:00] starting server model=medium target=gpu_1 port=18201
+[2026-04-27T20:52:20.797835+00:00] server ready model=medium target=gpu_1
+[2026-04-27T20:52:20.797867+00:00] run start medium_gpu_1_sustained_chatbot
+[2026-04-27T20:54:48.789142+00:00] run done medium_gpu_1_sustained_chatbot status=passed duration_s=144.0 issues=[]
+[2026-04-27T20:54:48.789493+00:00] cooldown gpu_1_loaded_server 15s
+[2026-04-27T20:55:03.804537+00:00] run start medium_gpu_1_sustained_code_generation
+[2026-04-27T20:57:48.221770+00:00] run done medium_gpu_1_sustained_code_generation status=passed duration_s=160.6 issues=[]
+[2026-04-27T20:57:48.222159+00:00] cooldown gpu_1_loaded_server 15s
+[2026-04-27T20:58:03.237203+00:00] run start medium_gpu_1_sustained_long_conversation
+[2026-04-27T21:00:58.843122+00:00] run done medium_gpu_1_sustained_long_conversation status=passed duration_s=171.8 issues=[]
+[2026-04-27T21:00:58.843508+00:00] cooldown gpu_1_loaded_server 15s
+[2026-04-27T21:01:13.858520+00:00] stopping server model=medium target=gpu_1
+[2026-04-27T21:01:19.163052+00:00] cooldown gpu_1 15s
+[2026-04-27T21:01:34.178257+00:00] starting server model=medium target=gpu_2 port=18202
+[2026-04-27T21:02:34.245826+00:00] server ready model=medium target=gpu_2
+[2026-04-27T21:02:34.245858+00:00] run start medium_gpu_2_sustained_chatbot
+[2026-04-27T21:04:17.347999+00:00] run done medium_gpu_2_sustained_chatbot status=passed duration_s=99.3 issues=[]
+[2026-04-27T21:04:17.348292+00:00] cooldown gpu_2_loaded_server 15s
+[2026-04-27T21:04:32.363230+00:00] run start medium_gpu_2_sustained_code_generation
+[2026-04-27T21:06:25.796228+00:00] run done medium_gpu_2_sustained_code_generation status=passed duration_s=110.5 issues=[]
+[2026-04-27T21:06:25.796569+00:00] cooldown gpu_2_loaded_server 15s
+[2026-04-27T21:06:40.811540+00:00] run start medium_gpu_2_sustained_long_conversation
+[2026-04-27T21:08:39.486443+00:00] run done medium_gpu_2_sustained_long_conversation status=passed duration_s=115.2 issues=[]
+[2026-04-27T21:08:39.486753+00:00] cooldown gpu_2_loaded_server 15s
+[2026-04-27T21:08:54.501751+00:00] stopping server model=medium target=gpu_2
+[2026-04-27T21:09:02.360238+00:00] cooldown gpu_2 15s
+[2026-04-27T21:09:17.376050+00:00] model done medium
+[2026-04-27T21:09:17.376605+00:00] real experiment driver finished

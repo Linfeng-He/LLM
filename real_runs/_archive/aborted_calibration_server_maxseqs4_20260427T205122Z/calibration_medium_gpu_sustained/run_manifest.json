@@ -1,0 +1,56 @@
+{
+  "timestamp_utc": "2026-04-27T20:50:21.363831+00:00",
+  "root": "/users/LH/inference",
+  "real_runs_dir": "/users/LH/inference/real_runs/calibration_medium_gpu_sustained",
+  "hf_home": "/proj/lsm-PG0/LH/hf_cache",
+  "models": [
+    {
+      "size": "medium",
+      "model": "Qwen/Qwen2.5-Coder-7B-Instruct"
+    }
+  ],
+  "workloads": {
+    "sustained_chatbot": {
+      "input_len": 512,
+      "output_len": 1024,
+      "num_prompts": 32,
+      "max_num_seqs": 8
+    },
+    "sustained_code_generation": {
+      "input_len": 2048,
+      "output_len": 1024,
+      "num_prompts": 32,
+      "max_num_seqs": 8
+    },
+    "sustained_long_conversation": {
+      "input_len": 6144,
+      "output_len": 1024,
+      "num_prompts": 16,
+      "max_num_seqs": 4
+    }
+  },
+  "cpu_core_counts": [
+    64
+  ],
+  "gpu_modes": [
+    {
+      "name": "gpu_1",
+      "visible_devices": "0",
+      "tensor_parallel_size": 1,
+      "port": 18201
+    },
+    {
+      "name": "gpu_2",
+      "visible_devices": "0,1",
+      "tensor_parallel_size": 2,
+      "port": 18202
+    }
+  ],
+  "run_targets": [
+    "gpu"
+  ],
+  "max_model_len": 8192,
+  "cpu_note": "CPU model is loaded once per model on the max configured CPU core count, then server affinity is applied before each CPU-core run.",
+  "gpu_note": "GPU topology is fixed at vLLM server launch, so each model is loaded once for 1GPU and once for 2GPU.",
+  "transfer_note": "GPU PCIe RX/TX counters are aggregate; for 2GPU they include CPU<->GPU plus tensor-parallel GPU<->GPU traffic over PCIe/SYS."
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "gpu_1",
+    "visible_devices": "0",
+    "tensor_parallel_size": 1,
+    "port": 18201
+  },
+  {
+    "name": "gpu_2",
+    "visible_devices": "0,1",
+    "tensor_parallel_size": 2,
+    "port": 18202
+  }
+]

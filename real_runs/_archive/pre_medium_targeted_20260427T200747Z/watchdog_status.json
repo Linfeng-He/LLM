@@ -1,0 +1,59 @@
+{
+  "timestamp_utc": "2026-04-27T00:45:21.944563+00:00",
+  "state": "halted_on_result_issue",
+  "driver_pid": 94031,
+  "driver_alive": true,
+  "summary": {
+    "results_seen": 12,
+    "expected_runs": 27,
+    "counts": {
+      "server_failed": 3,
+      "passed": 9
+    },
+    "issues": [
+      {
+        "path": "/users/LH/inference/real_runs/medium/cpu_64/chatbot/result.json",
+        "run_id": "medium_cpu64_chatbot",
+        "status": "server_failed",
+        "validation_issues": [],
+        "timeout_health_check": {}
+      },
+      {
+        "path": "/users/LH/inference/real_runs/medium/cpu_64/code_generation/result.json",
+        "run_id": "medium_cpu64_code_generation",
+        "status": "server_failed",
+        "validation_issues": [],
+        "timeout_health_check": {}
+      },
+      {
+        "path": "/users/LH/inference/real_runs/medium/cpu_64/long_conversation/result.json",
+        "run_id": "medium_cpu64_long_conversation",
+        "status": "server_failed",
+        "validation_issues": [],
+        "timeout_health_check": {}
+      }
+    ]
+  },
+  "driver_log_tail": [
+    "[2026-04-26T22:41:42.398601+00:00] cooldown gpu_1_loaded_server 15s",
+    "[2026-04-26T22:41:57.413636+00:00] stopping server model=small target=gpu_1",
+    "[2026-04-26T22:42:02.818974+00:00] cooldown gpu_1 15s",
+    "[2026-04-26T22:42:17.834306+00:00] starting server model=small target=gpu_2 port=18202",
+    "[2026-04-26T22:43:12.901081+00:00] server ready model=small target=gpu_2",
+    "[2026-04-26T22:43:12.901129+00:00] run start small_gpu_2_chatbot",
+    "[2026-04-26T22:43:28.044722+00:00] run done small_gpu_2_chatbot status=passed duration_s=11.7 issues=[]",
+    "[2026-04-26T22:43:28.044872+00:00] cooldown gpu_2_loaded_server 15s",
+    "[2026-04-26T22:43:43.059895+00:00] run start small_gpu_2_code_generation",
+    "[2026-04-26T22:44:01.247912+00:00] run done small_gpu_2_code_generation status=passed duration_s=14.7 issues=[]",
+    "[2026-04-26T22:44:01.248057+00:00] cooldown gpu_2_loaded_server 15s",
+    "[2026-04-26T22:44:16.263031+00:00] run start small_gpu_2_long_conversation",
+    "[2026-04-26T22:44:34.434090+00:00] run done small_gpu_2_long_conversation status=passed duration_s=14.9 issues=[]",
+    "[2026-04-26T22:44:34.434249+00:00] cooldown gpu_2_loaded_server 15s",
+    "[2026-04-26T22:44:49.449280+00:00] stopping server model=small target=gpu_2",
+    "[2026-04-26T22:44:56.011857+00:00] cooldown gpu_2 15s",
+    "[2026-04-26T22:45:11.029290+00:00] model done small",
+    "[2026-04-26T22:45:11.030208+00:00] model start medium Qwen/Qwen2.5-Coder-7B-Instruct",
+    "[2026-04-26T22:45:11.030477+00:00] starting server model=medium target=cpu port=18200",
+    "[2026-04-27T00:45:13.539971+00:00] server failed model=medium target=cpu reason=server_ready_timeout_after_7200s"
+  ]
+}

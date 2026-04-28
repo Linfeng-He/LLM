@@ -1,0 +1,9 @@
+[2026-04-27T20:08:42.706533+00:00] real experiment driver started
+[2026-04-27T20:08:42.706564+00:00] HF_HOME=/proj/lsm-PG0/LH/hf_cache
+[2026-04-27T20:08:42.706648+00:00] model start medium Qwen/Qwen2.5-Coder-7B-Instruct
+[2026-04-27T20:08:42.706734+00:00] starting server model=medium target=cpu port=18200
+[2026-04-27T20:14:18.059490+00:00] server ready model=medium target=cpu
+[2026-04-27T20:14:18.059526+00:00] run start medium_cpu64_chatbot
+[2026-04-27T20:25:51.733680+00:00] run done medium_cpu64_chatbot status=passed duration_s=690.5 issues=[]
+[2026-04-27T20:25:51.734451+00:00] cooldown cpu_loaded_server 15s
+[2026-04-27T20:26:06.749465+00:00] run start medium_cpu64_code_generation

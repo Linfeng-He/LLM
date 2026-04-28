@@ -1,0 +1,4 @@
+[2026-04-26T20:23:53.280306+00:00] real experiment driver started
+[2026-04-26T20:23:53.280338+00:00] HF_HOME=/proj/lsm-PG0/LH/hf_cache
+[2026-04-26T20:23:53.280412+00:00] model start small Qwen/Qwen2.5-Coder-1.5B-Instruct
+[2026-04-26T20:23:53.280426+00:00] starting server model=small target=cpu port=18200

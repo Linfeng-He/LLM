@@ -1,0 +1,42 @@
+{
+  "timestamp_utc": "2026-04-27T22:02:22.921379+00:00",
+  "state": "completed",
+  "driver_pid": 155526,
+  "driver_alive": false,
+  "summary": {
+    "results_seen": 6,
+    "expected_runs": 6,
+    "counts": {
+      "passed": 6
+    },
+    "issues": []
+  },
+  "driver_log_tail": [
+    "[2026-04-27T21:47:50.947846+00:00] run start medium_gpu_1_final_long_conversation",
+    "[2026-04-27T21:51:55.763976+00:00] run done medium_gpu_1_final_long_conversation status=passed duration_s=241.2 issues=[]",
+    "[2026-04-27T21:51:55.764451+00:00] cooldown gpu_1_loaded_server 15s",
+    "[2026-04-27T21:52:10.779427+00:00] stopping server model=medium target=gpu_1",
+    "[2026-04-27T21:52:16.133662+00:00] cooldown gpu_1 15s",
+    "[2026-04-27T21:52:31.148789+00:00] starting server model=medium target=gpu_2 port=18202",
+    "[2026-04-27T21:53:31.214819+00:00] server ready model=medium target=gpu_2",
+    "[2026-04-27T21:53:31.214851+00:00] run start medium_gpu_2_final_chatbot",
+    "[2026-04-27T21:55:51.803658+00:00] run done medium_gpu_2_final_chatbot status=passed duration_s=137.4 issues=[]",
+    "[2026-04-27T21:55:51.804035+00:00] cooldown gpu_2_loaded_server 15s",
+    "[2026-04-27T21:56:06.819063+00:00] run start medium_gpu_2_final_code_generation",
+    "[2026-04-27T21:58:43.937813+00:00] run done medium_gpu_2_final_code_generation status=passed duration_s=153.8 issues=[]",
+    "[2026-04-27T21:58:43.938224+00:00] cooldown gpu_2_loaded_server 15s",
+    "[2026-04-27T21:58:58.953285+00:00] run start medium_gpu_2_final_long_conversation",
+    "[2026-04-27T22:01:43.477377+00:00] run done medium_gpu_2_final_long_conversation status=passed duration_s=160.8 issues=[]",
+    "[2026-04-27T22:01:43.477759+00:00] cooldown gpu_2_loaded_server 15s",
+    "[2026-04-27T22:01:58.492740+00:00] stopping server model=medium target=gpu_2",
+    "[2026-04-27T22:02:06.351376+00:00] cooldown gpu_2 15s",
+    "[2026-04-27T22:02:21.367588+00:00] model done medium",
+    "[2026-04-27T22:02:21.368171+00:00] real experiment driver finished"
+  ],
+  "final_summary": {
+    "timestamp_utc": "2026-04-27T22:02:21.368069+00:00",
+    "runs": 6,
+    "passed": 6,
+    "failed": 0
+  }
+}

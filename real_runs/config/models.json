@@ -1,0 +1,14 @@
+[
+  {
+    "size": "small",
+    "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct"
+  },
+  {
+    "size": "medium",
+    "model": "Qwen/Qwen2.5-Coder-7B-Instruct"
+  },
+  {
+    "size": "large",
+    "model": "Qwen/Qwen2.5-Coder-14B-Instruct"
+  }
+]

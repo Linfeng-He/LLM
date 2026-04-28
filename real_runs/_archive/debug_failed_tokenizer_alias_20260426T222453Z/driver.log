@@ -1,0 +1,10 @@
+[2026-04-26T20:32:59.855276+00:00] real experiment driver started
+[2026-04-26T20:32:59.855315+00:00] HF_HOME=/proj/lsm-PG0/LH/hf_cache
+[2026-04-26T20:32:59.855356+00:00] model start small Qwen/Qwen2.5-Coder-1.5B-Instruct
+[2026-04-26T20:32:59.855604+00:00] starting server model=small target=cpu port=18200
+[2026-04-26T20:44:10.555191+00:00] run start small_cpu16_chatbot
+[2026-04-26T20:44:22.366339+00:00] run done small_cpu16_chatbot status=failed duration_s=8.5 issues=[]
+[2026-04-26T20:44:22.366397+00:00] cooldown cpu_loaded_server 15s
+[2026-04-26T20:44:37.381431+00:00] run start small_cpu16_code_generation
+[2026-04-26T20:44:49.178109+00:00] run done small_cpu16_code_generation status=failed duration_s=8.5 issues=[]
+[2026-04-26T20:44:49.178188+00:00] cooldown cpu_loaded_server 15s

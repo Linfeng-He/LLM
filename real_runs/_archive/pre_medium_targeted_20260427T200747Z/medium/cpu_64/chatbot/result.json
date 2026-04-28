@@ -1,0 +1,12 @@
+{
+  "timestamp_utc": "2026-04-27T00:45:13.540034+00:00",
+  "run_id": "medium_cpu64_chatbot",
+  "model_size": "medium",
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "target": "cpu",
+  "cpu_cores": 64,
+  "workload": "chatbot",
+  "status": "server_failed",
+  "server_ready_reason": "server_ready_timeout_after_7200s",
+  "server_log": "/users/LH/inference/real_runs/medium/cpu/server.log"
+}
