@@ -233,8 +233,13 @@ def write_csv(path, rows):
     path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
         return
+    fieldnames = []
+    for row in rows:
+        for key in row.keys():
+            if key not in fieldnames:
+                fieldnames.append(key)
     with path.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
 
