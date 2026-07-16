@@ -1,0 +1,32 @@
+INFO 07-15 07:12:00 [__init__.py:216] Automatically detected platform cuda.
+Namespace(subparser='bench', bench_type='serve', dispatch_function=<function BenchmarkServingSubcommand.cmd at 0x7bb2a91ed580>, seed=0, num_prompts=2, dataset_name='sharegpt', no_stream=False, dataset_path='/home/ubuntu/LLM/real_runs/datasets/sharegpt/ShareGPT_V3_unfiltered_cleaned_split.json', no_oversample=False, custom_output_len=256, custom_skip_chat_template=False, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, blazedit_min_distance=0.0, blazedit_max_distance=1.0, random_input_len=1024, random_output_len=128, random_range_ratio=0.0, random_prefix_len=0, random_batch_size=1, random_mm_base_items_per_request=1, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 255, 'video': 0}, random_mm_bucket_config={(256, 256, 1): 0.5, (720, 1280, 1): 0.5, (720, 1280, 16): 0.0}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, endpoint_type='openai', label=None, backend='vllm', base_url=None, host='127.0.0.1', port=18201, endpoint='/v1/completions', max_concurrency=2, model='Qwen/Qwen2.5-Coder-7B-Instruct', tokenizer='Qwen/Qwen2.5-Coder-7B-Instruct', use_beam_search=False, logprobs=None, request_rate=inf, burstiness=1.0, trust_remote_code=False, disable_tqdm=False, profile=False, save_result=True, save_detailed=True, append_result=False, metadata=['max_model_len=32768'], result_dir='/home/ubuntu/LLM/real_runs/a100_qwen7b/smoke/qwen7b/gpu_a100/smoke_chatbot_sharegpt/results', result_filename='bench_serve.json', ignore_eos=False, percentile_metrics='ttft,tpot,itl', metric_percentiles='99', goodput=None, request_id_prefix='benchmark-serving', top_p=None, top_k=None, min_p=None, temperature=None, tokenizer_mode='auto', served_model_name='qwen7b-gpu_a100', lora_modules=None, ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=600)
+Starting initial single prompt test run...
+Waiting for endpoint to become up in 600 seconds
+ |          | 00:00 elapsed, ? remaining |          | 00:00 elapsed, 00:07 remaining |          | 00:01 elapsed, 217:38:05 remaining
+Initial test run completed. Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 2
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:01<00:01,  1.61s/it]100%|██████████| 2/2 [00:09<00:00,  5.36s/it]100%|██████████| 2/2 [00:09<00:00,  4.79s/it]
+============ Serving Benchmark Result ============
+Successful requests:                     2         
+Maximum request concurrency:             2         
+Benchmark duration (s):                  9.59      
+Total input tokens:                      36        
+Total generated tokens:                  826       
+Request throughput (req/s):              0.21      
+Output token throughput (tok/s):         86.14     
+Total Token throughput (tok/s):          89.89     
+---------------Time to First Token----------------
+Mean TTFT (ms):                          33.32     
+Median TTFT (ms):                        33.32     
+P99 TTFT (ms):                           33.43     
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          13.44     
+Median TPOT (ms):                        13.44     
+P99 TPOT (ms):                           13.53     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           13.51     
+Median ITL (ms):                         13.52     
+P99 ITL (ms):                            14.39     
+==================================================

@@ -1,0 +1,13 @@
+{
+  "paper_validation_sharegpt_2rps": {
+    "dataset_name": "sharegpt",
+    "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/sharegpt/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "num_prompts": 200,
+    "max_num_seqs": 32,
+    "request_rate": 2.0,
+    "burstiness": 1.0,
+    "temperature": 0.0,
+    "ignore_eos": true,
+    "save_detailed": true
+  }
+}

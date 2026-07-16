@@ -1,0 +1,10 @@
+source,model,vllm_version,gpu,dataset,request_rate_req_s,normalized_latency_s_per_token,statistic
+PagedAttention Figure 12(a),OPT-13B,SOSP 2023 implementation,1 x NVIDIA A100 40GB,ShareGPT,1.0,0.037142935,paper curve
+PagedAttention Figure 12(a),OPT-13B,SOSP 2023 implementation,1 x NVIDIA A100 40GB,ShareGPT,1.25,0.040067353,paper curve
+PagedAttention Figure 12(a),OPT-13B,SOSP 2023 implementation,1 x NVIDIA A100 40GB,ShareGPT,1.5,0.042436172,paper curve
+PagedAttention Figure 12(a),OPT-13B,SOSP 2023 implementation,1 x NVIDIA A100 40GB,ShareGPT,1.5,0.04865602,paper curve
+PagedAttention Figure 12(a),OPT-13B,SOSP 2023 implementation,1 x NVIDIA A100 40GB,ShareGPT,1.75,0.112583951,paper curve
+PagedAttention Figure 12(a),OPT-13B,SOSP 2023 implementation,1 x NVIDIA A100 40GB,ShareGPT,1.8,0.130940006,paper curve
+PagedAttention Figure 12(a),OPT-13B,SOSP 2023 implementation,1 x NVIDIA A100 40GB,ShareGPT,1.9,0.239662196,paper curve
+PagedAttention Figure 12(a),OPT-13B,SOSP 2023 implementation,1 x NVIDIA A100 40GB,ShareGPT,2.0,1.124524291,paper curve
+local validation,Qwen2.5-Coder-7B-Instruct,0.25.1,1 x NVIDIA A100 40GB,ShareGPT,2.0,0.013354503007910863,local mean

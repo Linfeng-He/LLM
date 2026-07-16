@@ -1,0 +1,31 @@
+{
+  "reference": {
+    "citation": "Kwon et al., Efficient Memory Management for Large Language Model Serving with PagedAttention, SOSP 2023",
+    "paper_url": "https://arxiv.org/abs/2309.06180",
+    "figure": "Figure 12(a)",
+    "asset_sha256": "c374ca5253ebac3368413abeba37427ad1e7e73773d302304a3f83ec4fc80226",
+    "normalized_latency_at_2rps_s_per_token": 1.124524291
+  },
+  "local": {
+    "successful_requests": 200,
+    "mean_e2e_latency_s": 2.7834645492202252,
+    "mean_normalized_latency_s_per_token": 0.013354503007910863,
+    "p50_normalized_latency_s_per_token": 0.012555387490782898,
+    "p99_normalized_latency_s_per_token": 0.02174904584238295,
+    "mean_output_length_tokens": 223.485,
+    "configured_request_rate_req_s": 2.0,
+    "achieved_request_rate_req_s": 1.8646494233917428,
+    "output_throughput_tokens_s": 416.72117638670363,
+    "mean_ttft_ms": 45.99934564506839,
+    "mean_tpot_ms": 12.310670232718914,
+    "peak_running_requests": 10.0,
+    "peak_waiting_requests": 0,
+    "preemptions": 0.0,
+    "peak_gpu_kv_usage_pct": 0.9,
+    "cpu_kv_offload_enabled": false
+  },
+  "comparison": {
+    "paper_to_local_latency_ratio_at_2rps": 84.2056263968686,
+    "interpretation": "behavioral method validation, not exact numerical reproduction"
+  }
+}

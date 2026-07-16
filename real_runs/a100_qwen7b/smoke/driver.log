@@ -1,0 +1,27 @@
+[2026-07-15T07:09:30.248583+00:00] real experiment driver started
+[2026-07-15T07:09:30.248611+00:00] HF_HOME=/home/ubuntu/LLM/.hf_cache/huggingface
+[2026-07-15T07:09:30.248704+00:00] model start qwen7b Qwen/Qwen2.5-Coder-7B-Instruct
+[2026-07-15T07:09:30.249024+00:00] starting server model=qwen7b target=gpu_a100 port=18201
+[2026-07-15T07:11:55.333198+00:00] server ready model=qwen7b target=gpu_a100
+[2026-07-15T07:11:55.333235+00:00] run start qwen7b_gpu_a100_smoke_chatbot_sharegpt
+[2026-07-15T07:12:23.484104+00:00] run done qwen7b_gpu_a100_smoke_chatbot_sharegpt status=passed duration_s=24.2 issues=[]
+[2026-07-15T07:12:23.484268+00:00] cooldown gpu_a100_loaded_server 15s
+[2026-07-15T07:12:38.484413+00:00] run start qwen7b_gpu_a100_smoke_code_instructcoder
+[2026-07-15T07:12:52.361229+00:00] run done qwen7b_gpu_a100_smoke_code_instructcoder status=failed duration_s=10.3 issues=[]
+[2026-07-15T07:12:52.361362+00:00] cooldown gpu_a100_loaded_server 15s
+[2026-07-15T07:13:07.361491+00:00] stopping server model=qwen7b target=gpu_a100
+[2026-07-15T07:13:27.389074+00:00] cooldown gpu_a100 15s
+[2026-07-15T07:13:42.390212+00:00] model done qwen7b
+[2026-07-15T07:13:42.390663+00:00] real experiment driver finished
+[2026-07-15T07:15:00.082378+00:00] real experiment driver started
+[2026-07-15T07:15:00.082411+00:00] HF_HOME=/home/ubuntu/LLM/.hf_cache/huggingface
+[2026-07-15T07:15:00.082483+00:00] model start qwen7b Qwen/Qwen2.5-Coder-7B-Instruct
+[2026-07-15T07:15:00.082776+00:00] starting server model=qwen7b target=gpu_a100 port=18201
+[2026-07-15T07:17:30.166442+00:00] server ready model=qwen7b target=gpu_a100
+[2026-07-15T07:17:30.166485+00:00] run start qwen7b_gpu_a100_smoke_code_instructcoder
+[2026-07-15T07:17:45.142605+00:00] run done qwen7b_gpu_a100_smoke_code_instructcoder status=passed duration_s=11.2 issues=[]
+[2026-07-15T07:17:45.142744+00:00] cooldown gpu_a100_loaded_server 15s
+[2026-07-15T07:18:00.142876+00:00] stopping server model=qwen7b target=gpu_a100
+[2026-07-15T07:18:20.172269+00:00] cooldown gpu_a100 15s
+[2026-07-15T07:18:35.174323+00:00] model done qwen7b
+[2026-07-15T07:18:35.175342+00:00] real experiment driver finished

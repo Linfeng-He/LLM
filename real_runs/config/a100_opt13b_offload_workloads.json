@@ -1,0 +1,30 @@
+{
+  "offload_chat_30gib": {
+    "dataset_name": "custom",
+    "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/opt13b_offload/chat_22x1536.jsonl",
+    "output_len": 1536,
+    "num_prompts": 22,
+    "max_num_seqs": 22,
+    "max_concurrency": 22,
+    "temperature": 0.0,
+    "ignore_eos": true,
+    "skip_chat_template": true,
+    "disable_shuffle": true,
+    "no_oversample": true,
+    "save_detailed": true
+  },
+  "offload_code_30gib": {
+    "dataset_name": "custom",
+    "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/opt13b_offload/code_22x1536.jsonl",
+    "output_len": 1536,
+    "num_prompts": 22,
+    "max_num_seqs": 22,
+    "max_concurrency": 22,
+    "temperature": 0.0,
+    "ignore_eos": true,
+    "skip_chat_template": true,
+    "disable_shuffle": true,
+    "no_oversample": true,
+    "save_detailed": true
+  }
+}

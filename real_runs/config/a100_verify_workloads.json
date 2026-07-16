@@ -1,0 +1,22 @@
+{
+  "verify_chatbot_sharegpt": {
+    "dataset_name": "sharegpt",
+    "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/sharegpt/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "num_prompts": 200,
+    "max_num_seqs": 32,
+    "request_rate": 2.0,
+    "save_detailed": true
+  },
+  "verify_code_instructcoder": {
+    "dataset_name": "hf",
+    "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/instructcoder",
+    "hf_name": "likaixin/InstructCoder",
+    "hf_split": "train",
+    "output_len": 200,
+    "num_prompts": 200,
+    "max_num_seqs": 32,
+    "request_rate": 2.0,
+    "no_stream": true,
+    "save_detailed": true
+  }
+}

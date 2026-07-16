@@ -1,0 +1,8 @@
+[
+  {
+    "name": "gpu_a100",
+    "visible_devices": "0",
+    "tensor_parallel_size": 1,
+    "port": 18201
+  }
+]

@@ -1,0 +1,6 @@
+.hf_cache/
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+real_runs/datasets/

@@ -1,0 +1,68 @@
+{
+  "timestamp_utc": "2026-07-15T07:29:27.332486+00:00",
+  "root": "/home/ubuntu/LLM",
+  "real_runs_dir": "/home/ubuntu/LLM/real_runs/a100_qwen7b/offload",
+  "hf_home": "/home/ubuntu/LLM/.hf_cache/huggingface",
+  "server_host": "127.0.0.1",
+  "cpu_vllm": "/home/ubuntu/LLM/.venv-vllm-cpu-0102/bin/vllm",
+  "gpu_vllm": "/home/ubuntu/LLM/.venv-vllm-gpu-0102/bin/vllm",
+  "client_cpuset": "29",
+  "cpu_server_cpuset": "0-29",
+  "cpu_server_omp_threads": "30",
+  "cpu_server_port": 18200,
+  "models": [
+    {
+      "size": "qwen7b",
+      "model": "Qwen/Qwen2.5-Coder-7B-Instruct"
+    }
+  ],
+  "workloads": {
+    "offload_chatbot_sharegpt": {
+      "dataset_name": "custom",
+      "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/sharegpt/sharegpt_long_chat_32.jsonl",
+      "output_len": 30000,
+      "num_prompts": 32,
+      "max_num_seqs": 32,
+      "max_concurrency": 32,
+      "ignore_eos": true,
+      "save_detailed": true,
+      "no_stream": false
+    },
+    "offload_code_instructcoder": {
+      "dataset_name": "hf",
+      "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/instructcoder",
+      "hf_name": "likaixin/InstructCoder",
+      "hf_split": "train",
+      "output_len": 30000,
+      "num_prompts": 32,
+      "max_num_seqs": 32,
+      "max_concurrency": 32,
+      "ignore_eos": true,
+      "no_stream": true,
+      "save_detailed": true
+    }
+  },
+  "cpu_core_counts": [
+    30
+  ],
+  "gpu_modes": [
+    {
+      "name": "gpu_a100",
+      "visible_devices": "0",
+      "tensor_parallel_size": 1,
+      "port": 18201
+    }
+  ],
+  "run_targets": [
+    "gpu_a100"
+  ],
+  "gpu_memory_utilization": "0.90",
+  "gpu_swap_space_gb": "64",
+  "gpu_preemption_mode": "swap",
+  "max_model_len": 32768,
+  "system_snapshot": "/home/ubuntu/LLM/real_runs/a100_qwen7b/offload/system_snapshot.json",
+  "nvidia_smi_q": "/home/ubuntu/LLM/real_runs/a100_qwen7b/offload/nvidia_smi_q.txt",
+  "cpu_note": "CPU model is loaded once per model on the max configured CPU core count, then server affinity is applied before each CPU-core run.",
+  "gpu_note": "GPU topology is fixed at vLLM server launch, so each model is loaded once for 1GPU and once for 2GPU.",
+  "transfer_note": "GPU PCIe RX/TX counters are aggregate; for 2GPU they include CPU<->GPU plus tensor-parallel GPU<->GPU traffic over PCIe/SYS."
+}

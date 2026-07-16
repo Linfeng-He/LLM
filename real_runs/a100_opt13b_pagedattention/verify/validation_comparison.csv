@@ -1,0 +1,3 @@
+source,model,gpu,workload,normalized_latency_s_per_token,statistic
+PagedAttention SOSP 2023 Figure 12(a),OPT-13B,A100 40GB,"ShareGPT, Poisson 1 req/s",0.037142935,paper mean
+local vLLM 0.25.1 validation,facebook/opt-13b,A100 40GB,"ShareGPT, Poisson 1 req/s, 100 requests",0.025784693791411586,local mean

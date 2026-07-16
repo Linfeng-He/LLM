@@ -1,0 +1,15 @@
+[2026-07-15T07:19:22.803828+00:00] real experiment driver started
+[2026-07-15T07:19:22.803859+00:00] HF_HOME=/home/ubuntu/LLM/.hf_cache/huggingface
+[2026-07-15T07:19:22.803946+00:00] model start qwen7b Qwen/Qwen2.5-Coder-7B-Instruct
+[2026-07-15T07:19:22.804085+00:00] starting server model=qwen7b target=gpu_a100 port=18201
+[2026-07-15T07:21:52.898016+00:00] server ready model=qwen7b target=gpu_a100
+[2026-07-15T07:21:52.898055+00:00] run start qwen7b_gpu_a100_verify_chatbot_sharegpt
+[2026-07-15T07:24:02.607611+00:00] run done qwen7b_gpu_a100_verify_chatbot_sharegpt status=passed duration_s=125.2 issues=[]
+[2026-07-15T07:24:02.608283+00:00] cooldown gpu_a100_loaded_server 15s
+[2026-07-15T07:24:17.608416+00:00] run start qwen7b_gpu_a100_verify_code_instructcoder
+[2026-07-15T07:26:13.758201+00:00] run done qwen7b_gpu_a100_verify_code_instructcoder status=passed duration_s=112.8 issues=[]
+[2026-07-15T07:26:13.758785+00:00] cooldown gpu_a100_loaded_server 15s
+[2026-07-15T07:26:28.759004+00:00] stopping server model=qwen7b target=gpu_a100
+[2026-07-15T07:26:48.782189+00:00] cooldown gpu_a100 15s
+[2026-07-15T07:27:03.783582+00:00] model done qwen7b
+[2026-07-15T07:27:03.784081+00:00] real experiment driver finished

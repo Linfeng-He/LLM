@@ -1,0 +1,25 @@
+{
+  "offload_chatbot_sharegpt": {
+    "dataset_name": "custom",
+    "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/sharegpt/sharegpt_long_chat_32.jsonl",
+    "output_len": 30000,
+    "num_prompts": 32,
+    "max_num_seqs": 32,
+    "max_concurrency": 32,
+    "ignore_eos": true,
+    "save_detailed": true
+  },
+  "offload_code_instructcoder": {
+    "dataset_name": "hf",
+    "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/instructcoder",
+    "hf_name": "likaixin/InstructCoder",
+    "hf_split": "train",
+    "output_len": 30000,
+    "num_prompts": 32,
+    "max_num_seqs": 32,
+    "max_concurrency": 32,
+    "ignore_eos": true,
+    "no_stream": true,
+    "save_detailed": true
+  }
+}

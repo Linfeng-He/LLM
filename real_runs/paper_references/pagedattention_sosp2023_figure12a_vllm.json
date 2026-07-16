@@ -1,0 +1,39 @@
+{
+  "citation": "Kwon et al., Efficient Memory Management for Large Language Model Serving with PagedAttention, SOSP 2023",
+  "paper_url": "https://arxiv.org/abs/2309.06180",
+  "figure": "Figure 12(a)",
+  "series": "vLLM",
+  "configuration": {
+    "model": "OPT-13B",
+    "gpu": "1 x NVIDIA A100 40GB",
+    "dataset": "ShareGPT-derived input/output lengths",
+    "arrival_process": "Poisson",
+    "metric": "mean per-request end-to-end latency divided by output length"
+  },
+  "source": {
+    "arxiv_source_url": "https://export.arxiv.org/e-print/2309.06180",
+    "asset_path": "figures/experiments/n1-sharegpt.pdf",
+    "asset_sha256": "c374ca5253ebac3368413abeba37427ad1e7e73773d302304a3f83ec4fc80226",
+    "extraction": "Vector path coordinates transformed with the embedded plot axes"
+  },
+  "axis_transform": {
+    "x_origin": 78.480003,
+    "x_units_per_request_per_second": 141.345341,
+    "y_origin": 133.619995,
+    "y_units_per_second_per_token": 83.159988
+  },
+  "points": [
+    {"request_rate_req_s": 1.0, "normalized_latency_s_per_token": 0.037142935},
+    {"request_rate_req_s": 1.25, "normalized_latency_s_per_token": 0.040067353},
+    {"request_rate_req_s": 1.5, "normalized_latency_s_per_token": 0.042436172},
+    {"request_rate_req_s": 1.5, "normalized_latency_s_per_token": 0.048656020},
+    {"request_rate_req_s": 1.75, "normalized_latency_s_per_token": 0.112583951},
+    {"request_rate_req_s": 1.8, "normalized_latency_s_per_token": 0.130940006},
+    {"request_rate_req_s": 1.9, "normalized_latency_s_per_token": 0.239662196},
+    {"request_rate_req_s": 2.0, "normalized_latency_s_per_token": 1.124524291}
+  ],
+  "notes": [
+    "The duplicate 1.5 req/s vertices are present in the paper's ordered vector path.",
+    "The 2.0 req/s marker lies above the original figure's 1.0 s/token y-axis limit but is retained in the vector source."
+  ]
+}

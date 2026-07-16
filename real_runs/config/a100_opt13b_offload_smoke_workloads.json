@@ -1,0 +1,16 @@
+{
+  "offload_smoke_chat": {
+    "dataset_name": "custom",
+    "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/opt13b_offload/smoke_chat_8x1024.jsonl",
+    "output_len": 1024,
+    "num_prompts": 8,
+    "max_num_seqs": 8,
+    "max_concurrency": 8,
+    "temperature": 0.0,
+    "ignore_eos": true,
+    "skip_chat_template": true,
+    "disable_shuffle": true,
+    "no_oversample": true,
+    "save_detailed": true
+  }
+}

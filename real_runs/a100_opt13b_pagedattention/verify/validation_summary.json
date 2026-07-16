@@ -1,0 +1,55 @@
+{
+  "reference": {
+    "citation": "Kwon et al., Efficient Memory Management for Large Language Model Serving with PagedAttention, SOSP 2023",
+    "paper_url": "https://arxiv.org/abs/2309.06180",
+    "figure": "Figure 12(a)",
+    "model": "OPT-13B",
+    "gpu": "1 x A100 40GB",
+    "normalized_latency_at_1rps_s_per_token": 0.037142935,
+    "asset_sha256": "c374ca5253ebac3368413abeba37427ad1e7e73773d302304a3f83ec4fc80226"
+  },
+  "local": {
+    "successful_requests": 100,
+    "mean_e2e_latency_s": 6.210978747619774,
+    "mean_normalized_latency_s_per_token": 0.025784693791411586,
+    "p50_normalized_latency_s_per_token": 0.02473424203082595,
+    "p99_normalized_latency_s_per_token": 0.03493166615682644,
+    "mean_output_length_tokens": 256.8,
+    "model": "facebook/opt-13b",
+    "model_revision": "e515202d1e7750da62d245fbccb2723b9c1790f5",
+    "vllm_version": "0.25.1",
+    "configured_request_rate_req_s": 1.0,
+    "achieved_request_throughput_req_s": 0.8491795989643187,
+    "output_throughput_tokens_s": 218.06932101403706,
+    "mean_ttft_ms": 85.9510908397715,
+    "mean_tpot_ms": 24.003640195148414,
+    "peak_running_requests": 11.0,
+    "peak_waiting_requests": 0,
+    "preemptions": 0.0,
+    "peak_gpu_kv_usage_pct": 32.25446428571429,
+    "cpu_kv_offload_enabled": false,
+    "model_weight_gib": 23.94,
+    "gpu_kv_pool_gib": 10.95,
+    "gpu_kv_pool_tokens": 14352
+  },
+  "comparison": {
+    "local_relative_difference_pct": -30.579816076969724,
+    "paper_to_local_latency_ratio": 1.4405032419803891,
+    "local_p99_relative_difference_pct": -5.953403636986579,
+    "assessment": "same low-load latency regime; newer vLLM is faster"
+  },
+  "matched_dimensions": [
+    "OPT-13B model",
+    "one A100 40GB",
+    "FP16",
+    "ShareGPT text generation",
+    "Poisson arrivals at 1 request/s",
+    "2048-token context",
+    "mean E2E latency divided by output tokens"
+  ],
+  "remaining_differences": [
+    "vLLM 0.25.1 versus the paper's 2023 implementation",
+    "100-request short trace versus one-hour paper trace",
+    "ShareGPT request subset is not guaranteed byte-identical"
+  ]
+}

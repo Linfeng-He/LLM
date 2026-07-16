@@ -1,0 +1,64 @@
+{
+  "timestamp_utc": "2026-07-15T12:13:37.868226+00:00",
+  "root": "/home/ubuntu/LLM",
+  "real_runs_dir": "/home/ubuntu/LLM/real_runs/a100_opt13b_offload_matrix/kv5/code",
+  "hf_home": "/home/ubuntu/LLM/.hf_cache/huggingface",
+  "server_host": "127.0.0.1",
+  "cpu_vllm": "/home/ubuntu/LLM/.venv-vllm-cpu-0102/bin/vllm",
+  "gpu_vllm": "/home/ubuntu/LLM/.venv-vllm-gpu-0251/bin/vllm",
+  "client_cpuset": "29",
+  "cpu_server_cpuset": "0-29",
+  "cpu_server_omp_threads": "30",
+  "cpu_server_port": 18200,
+  "models": [
+    {
+      "size": "opt13b",
+      "model": "facebook/opt-13b"
+    }
+  ],
+  "workloads": {
+    "offload_code_30gib": {
+      "dataset_name": "custom",
+      "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/opt13b_offload/code_22x1536.jsonl",
+      "output_len": 1536,
+      "num_prompts": 22,
+      "max_num_seqs": 22,
+      "max_concurrency": 22,
+      "temperature": 0.0,
+      "ignore_eos": true,
+      "skip_chat_template": true,
+      "disable_shuffle": true,
+      "no_oversample": true,
+      "save_detailed": true,
+      "no_stream": false
+    }
+  },
+  "cpu_core_counts": [
+    30
+  ],
+  "gpu_modes": [
+    {
+      "name": "gpu_a100",
+      "visible_devices": "0",
+      "tensor_parallel_size": 1,
+      "port": 18201
+    }
+  ],
+  "run_targets": [
+    "gpu_a100"
+  ],
+  "gpu_memory_utilization": "0.75125",
+  "gpu_engine": "v1",
+  "gpu_swap_space_gb": "64",
+  "gpu_preemption_mode": "swap",
+  "gpu_kv_offloading_size_gb": "40",
+  "gpu_kv_offloading_backend": "native",
+  "gpu_kv_offload_prompt_only": false,
+  "gpu_use_flashinfer_sampler": "0",
+  "max_model_len": 2048,
+  "system_snapshot": "/home/ubuntu/LLM/real_runs/a100_opt13b_offload_matrix/kv5/code/system_snapshot.json",
+  "nvidia_smi_q": "/home/ubuntu/LLM/real_runs/a100_opt13b_offload_matrix/kv5/code/nvidia_smi_q.txt",
+  "cpu_note": "CPU model is loaded once per model on the max configured CPU core count, then server affinity is applied before each CPU-core run.",
+  "gpu_note": "GPU topology is fixed at vLLM server launch, so each model is loaded once for 1GPU and once for 2GPU.",
+  "transfer_note": "GPU PCIe RX/TX counters are aggregate; for 2GPU they include CPU<->GPU plus tensor-parallel GPU<->GPU traffic over PCIe/SYS."
+}

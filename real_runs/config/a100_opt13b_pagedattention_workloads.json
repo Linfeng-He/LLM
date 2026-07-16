@@ -1,0 +1,13 @@
+{
+  "sharegpt_1rps_short_trace": {
+    "dataset_name": "sharegpt",
+    "dataset_path": "/home/ubuntu/LLM/real_runs/datasets/sharegpt/ShareGPT_V3_unfiltered_cleaned_split.json",
+    "num_prompts": 100,
+    "max_num_seqs": 32,
+    "request_rate": 1.0,
+    "burstiness": 1.0,
+    "temperature": 0.0,
+    "ignore_eos": true,
+    "save_detailed": true
+  }
+}

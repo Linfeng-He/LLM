@@ -1,0 +1,6 @@
+[
+  {
+    "size": "qwen7b",
+    "model": "Qwen/Qwen2.5-Coder-7B-Instruct"
+  }
+]
