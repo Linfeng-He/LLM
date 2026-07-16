@@ -19,6 +19,10 @@ export GPU_TORCH_INDEX_URL="${GPU_TORCH_INDEX_URL:-https://download.pytorch.org/
 export VLLM_GPU_PACKAGE="${VLLM_GPU_PACKAGE:-vllm[bench]==0.10.2}"
 export VLLM_TRANSFORMERS_PACKAGE="${VLLM_TRANSFORMERS_PACKAGE:-transformers==4.55.4}"
 export VLLM_HF_HUB_PACKAGE="${VLLM_HF_HUB_PACKAGE:-huggingface-hub<1.0}"
+export VLLM_GPU_0251_TORCH_PACKAGE="${VLLM_GPU_0251_TORCH_PACKAGE:-torch==2.11.0}"
+export VLLM_GPU_0251_PACKAGE="${VLLM_GPU_0251_PACKAGE:-vllm[bench]==0.25.1}"
+export VLLM_GPU_0251_TRANSFORMERS_PACKAGE="${VLLM_GPU_0251_TRANSFORMERS_PACKAGE:-transformers==5.13.1}"
+export VLLM_GPU_0251_HF_HUB_PACKAGE="${VLLM_GPU_0251_HF_HUB_PACKAGE:-huggingface-hub==1.23.0}"
 export NVIDIA_DRIVER_VERSION="${NVIDIA_DRIVER_VERSION:-580}"
 ```
 
@@ -168,6 +172,18 @@ PY
 deactivate
 ```
 
+Create the vLLM 0.25.1 GPU environment used by the V1 A100 profiles. The
+tracked installer pins the validated core environment: vLLM 0.25.1, PyTorch
+2.11.0, Transformers 5.13.1, and Hugging Face Hub 1.23.0.
+
+```bash
+cd "$INFERENCE_ROOT"
+bash real_runs/scripts/setup_vllm_gpu_0251_env.sh
+```
+
+The validated installation uses a CUDA 13.0 PyTorch build. Verify that the
+installed NVIDIA driver supports that runtime before running the profiles.
+
 GPU runs need a working NVIDIA driver (`nvidia-smi`), `/dev/nvidiactl`, and
 CUDA-visible GPUs supported by the selected vLLM/PyTorch wheels. They are not
 specific to V100S; set `GPU_TORCH_INDEX_URL` for the CUDA wheel family available
@@ -236,3 +252,43 @@ python -u real_runs/scripts/run_real_experiments.py 2>&1 | tee "$REAL_RUN_DIR/dr
 
 Results and the paper-method comparison are in
 `real_runs/a100_qwen7b/final_report.md`.
+
+## vLLM 0.25.1 A100 profiles
+
+The newer V1 profiles use `.venv-vllm-gpu-0251`. Run the Qwen 7B smoke and
+paper-validation profiles with:
+
+```bash
+cd /path/to/inference
+source .venv/bin/activate
+for profile in a100_qwen7b_v0251_smoke a100_qwen7b_v0251_verify; do
+  source real_runs/scripts/setup_run_env.sh "$profile"
+  python -u real_runs/scripts/run_real_experiments.py 2>&1 | tee "$REAL_RUN_DIR/driver.log"
+done
+```
+
+Run the OPT-13B PagedAttention smoke and validation profiles with:
+
+```bash
+for profile in a100_opt13b_pagedattention_smoke a100_opt13b_pagedattention_verify; do
+  source real_runs/scripts/setup_run_env.sh "$profile"
+  python -u real_runs/scripts/run_real_experiments.py 2>&1 | tee "$REAL_RUN_DIR/driver.log"
+done
+```
+
+Run the OPT-13B native CPU KV-offload matrix with:
+
+```bash
+for profile in \
+  a100_opt13b_offload_smoke \
+  a100_opt13b_offload_kv5_chat \
+  a100_opt13b_offload_kv5_code \
+  a100_opt13b_offload_kv10_chat \
+  a100_opt13b_offload_kv10_code; do
+  source real_runs/scripts/setup_run_env.sh "$profile"
+  python -u real_runs/scripts/run_real_experiments.py 2>&1 | tee "$REAL_RUN_DIR/driver.log"
+done
+```
+
+Downloaded datasets remain machine-local under `real_runs/datasets/`; the run
+profiles and committed manifests record the required dataset names and paths.
