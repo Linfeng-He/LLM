@@ -16,7 +16,7 @@ export VLLM_REF="${VLLM_REF:-v0.10.2}"
 export VLLM_SOURCE_DIR="${VLLM_SOURCE_DIR:-$INFERENCE_ROOT/vllm_source_0102}"
 export CPU_TORCH_INDEX_URL="${CPU_TORCH_INDEX_URL:-https://download.pytorch.org/whl/cpu}"
 export GPU_TORCH_INDEX_URL="${GPU_TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu128}"
-export VLLM_GPU_PACKAGE="${VLLM_GPU_PACKAGE:-vllm==0.10.2}"
+export VLLM_GPU_PACKAGE="${VLLM_GPU_PACKAGE:-vllm[bench]==0.10.2}"
 export VLLM_TRANSFORMERS_PACKAGE="${VLLM_TRANSFORMERS_PACKAGE:-transformers==4.55.4}"
 export VLLM_HF_HUB_PACKAGE="${VLLM_HF_HUB_PACKAGE:-huggingface-hub<1.0}"
 export NVIDIA_DRIVER_VERSION="${NVIDIA_DRIVER_VERSION:-580}"
@@ -202,3 +202,37 @@ Expected runs: `6`.
 
 Outputs: `summary.json`, `all_results.csv`, `all_results.jsonl`, and per-run
 `result.json`, `metrics/`, `logs/`, `figures/`.
+
+## Qwen 7B on one A100 40GB
+
+The A100 profiles select only `Qwen/Qwen2.5-Coder-7B-Instruct`. They use one
+GPU, a 0.90 vLLM GPU-memory-utilization setting, a 32,768-token context, V0
+`swap` preemption, and no benchmark or server timeout. The finite 64 GiB CPU KV
+swap allocation is larger than the full requested KV footprint and is therefore
+non-binding for these workloads.
+
+Run the metric-collection smoke phase first:
+
+```bash
+cd /path/to/inference
+source .venv/bin/activate
+source real_runs/scripts/setup_run_env.sh a100_qwen7b_smoke
+python -u real_runs/scripts/run_real_experiments.py 2>&1 | tee "$REAL_RUN_DIR/driver.log"
+```
+
+Run the 200-request ShareGPT and InstructCoder verification phase:
+
+```bash
+source real_runs/scripts/setup_run_env.sh a100_qwen7b_verify
+python -u real_runs/scripts/run_real_experiments.py 2>&1 | tee "$REAL_RUN_DIR/driver.log"
+```
+
+Run the two 32-request, 30,000-output-token CPU KV-offload workloads:
+
+```bash
+source real_runs/scripts/setup_run_env.sh a100_qwen7b_offload
+python -u real_runs/scripts/run_real_experiments.py 2>&1 | tee "$REAL_RUN_DIR/driver.log"
+```
+
+Results and the paper-method comparison are in
+`real_runs/a100_qwen7b/final_report.md`.
